@@ -1,60 +1,101 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center">{{ msg }}</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <Conversor currency1="USD" currency2="BRL"></Conversor>
+        </div>
+        <div class="col-md-3">
+          <Conversor currency1="BRL" currency2="USD"></Conversor>
+        </div>
+        <div class="col-md-3">
+          <Conversor currency1="CAD" currency2="BRL"></Conversor>
+        </div>
+        <div class="col-md-3">
+          <Conversor currency1="CAD" currency2="USD"></Conversor>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <Conversor currency1="BRL" currency2="CAD"></Conversor>
+        </div>
+        <div class="col-md-3">
+          <Conversor currency1="BRL" currency2="EUR"></Conversor>
+        </div>
+        <div class="col-md-3">
+          <Conversor currency1="EUR" currency2="BRL"></Conversor>
+        </div>
+        <div class="col-md-3">
+          <Conversor currency1="BRL" currency2="ARS"></Conversor>
+        </div>
+      </div>
+      <br>
+            <div class="row">
+        <div class="col-md-3">
+          <Conversor currency1="BRL" currency2="GBP"></Conversor>
+        </div>
+        <div class="col-md-3">
+          <Conversor currency1="GBP" currency2="BRL"></Conversor>
+        </div>
+        <div class="col-md-3">
+          <Conversor currency1="EUR" currency2="GBP"></Conversor>
+        </div>
+        <div class="col-md-3">
+          <Conversor currency1="GBP" currency2="USD"></Conversor>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  import Conversor from "./Conversor.vue";
+  export default {
+    name: 'app',
+    components: {
+      Conversor
+    },
+    data() {
+      return {
+        msg: 'A Currency converter made with vue.js'
+      }
     }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 
-h1, h2 {
-  font-weight: normal;
-}
+  h1,
+  h2 {
+    font-weight: normal;
+  }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
 
-a {
-  color: #42b983;
-}
+  a {
+    color: #42b983;
+  }
 </style>
