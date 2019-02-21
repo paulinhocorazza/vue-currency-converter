@@ -26,15 +26,18 @@
             converter() {
 
                 let from = this.currency1 + "_" + this.currency2;
-                let url = "https://free.currencyconverterapi.com/api/v5/convert?q=" + from + "&compact=y";
-
+                let key = "ce1fec4d3fe7d588d9a6";
+                let url = "https://free.currencyconverterapi.com/api/v6/convert?q=" + from + "&compact=ultra&apiKey=" + key;
+               
 
                 fetch(url).then(res => {
                         return res.json()
                     })
                     .then(json => {
+                        
                         let cotacao = json[from].val;
                         this.currency2_value = (cotacao * parseFloat(this.currency1_value)).toFixed(2);
+
                     })
             }
 
